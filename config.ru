@@ -4,4 +4,4 @@ app = Rack::Builder.app do
   run lambda { |env| [200, {'Content-Type' => 'text/html'}, File.open('public/index.html', File::RDONLY)] }
 end
 
-Rack::Handler::WEBrick.run app
+run app
