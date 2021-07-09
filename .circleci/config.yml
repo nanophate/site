@@ -1,0 +1,19 @@
+---
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.1
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.7.4-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - ruby/install-deps
+      - ruby/rspec-test
+workflows:
+  test:
+    jobs:
+      - test
