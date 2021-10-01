@@ -8,6 +8,5 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
-    sleep 10000
   end
 end
