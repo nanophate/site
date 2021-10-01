@@ -14,6 +14,15 @@ jobs:
       - checkout
       - ruby/install-deps
       - ruby/rspec-test
+      - run:
+        name: 'Clone other repo'
+        command: git clone https://github.com/nanophate/minirepo_sample_site
+      - run:
+        name: 'Checkout out into other repo'
+        command: cd minirepo_sample_site
+      - run:
+        name: 'check if its on other repo'
+        command: echo "$(pwd)"
 workflows:
   test_deploy:
     jobs:
