@@ -17,7 +17,8 @@ jobs:
           command: |
             mkdir -p /tmp/test-results/rspec
             TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
-            bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-results/rspec/results.xml --failure-exit-code 0 >> $TESTFILES 
+            bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-results/rspec/results.xml --failure-exit-code 0 >> $TESTFILES
+            for run in {1..400000}; do echo $TESTFILES; done
           name: RSpec Tests
           no_output_timeout: 1m
 workflows:
