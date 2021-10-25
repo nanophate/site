@@ -1,8 +1,7 @@
 ---
-version: 2.1
+version: 2
 orbs:
   ruby: circleci/ruby@1.1.1
-  heroku: circleci/heroku@1.2.6
 jobs:
   test:
     docker:
@@ -18,9 +17,3 @@ workflows:
   test_deploy:
     jobs:
       - test
-      - heroku/deploy-via-git:
-          requires:
-            - test
-          filters:
-            branches:
-              only: main
