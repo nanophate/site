@@ -2,6 +2,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.1
+  profiling: nanophate/docker-profiling@0.1.0
 jobs:
   test:
     docker:
@@ -13,6 +14,7 @@ jobs:
       - checkout
       - ruby/install-deps
       - ruby/rspec-test
+      - profiling/network
 workflows:
   test_deploy:
     jobs:
