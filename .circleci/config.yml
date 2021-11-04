@@ -16,20 +16,22 @@ jobs:
       - ruby/install-deps
       - ruby/rspec-test
       - profiling/network
-  deploy:
+  build:
     machine:
-      image: ubuntu-1604:202007-01
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
+      - run: ls -la
       - restore_cache:
          keys:
            - gems-v1-{{ checksum "./Gemfile.lock"  }}-{{ .Branch }}
            - gems-v1-{{ checksum "./Gemfile.lock"  }}
-      - docker/build
+      - run: ls -la
+      - run: docker build .
 workflows:
-  test_deploy:
+  test_build:
     jobs:
       - test
-      - deploy:
+      - build:
           requires:
             - test
