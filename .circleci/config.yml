@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.1
   profiling: nanophate/docker-profiling@0.3.0
+  docker: circleci/docker@1.7.0
 jobs:
   test:
     docker:
@@ -15,8 +16,19 @@ jobs:
       - ruby/install-deps
       - ruby/rspec-test
       - profiling/network
-      - run: docker build .
+  deploy:
+    executor: docker/docker
+    environment:
+      DOCKER_BUILDKIT: "1"
+    steps:
+     - checkout
+     - restore_cache:
+        keys:
+          - gems-v1-{{ checksum "./Gemfile.lock"  }}-{{ .Branch }}
+          - gems-v1-{{ checksum "./Gemfile.lock"  }}
+     - docker/build
 workflows:
   test_deploy:
     jobs:
       - test
+      - deploy
