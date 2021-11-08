@@ -13,6 +13,14 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - run:
+        name: Skip if [circle skip] is present
+        command: |
+          COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)
+          CIRCLESKIP="^.*[circle skip]*$"
+          if [[ ${COMMIT_MESSAGE} =~ ${CIRCLESKIP} ]]; then
+            circleci-agent step halt
+          fi
       - ruby/install-deps
       - ruby/rspec-test
       - profiling/network
