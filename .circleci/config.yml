@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Skip if [circle skip] is present
+          name: Skip if [circle skip]
           command: |
             COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)
             CIRCLESKIP="^.*[circle skip]*$"
