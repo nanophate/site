@@ -16,8 +16,8 @@ jobs:
       - run:
           name: Skip if [circle skip]
           command: |
-            COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)
-            CIRCLESKIP="^.*[circle skip]*$"
+            MESSAGE=$(git log -1 HEAD --pretty=format:%s)
+            CIRCLESKIP="*[circle skip]*"
             if [[ ${COMMIT_MESSAGE} =~ ${CIRCLESKIP} ]]; then
               circleci-agent step halt
             fi
