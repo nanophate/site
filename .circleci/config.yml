@@ -43,13 +43,3 @@ workflows:
       - build:
           requires:
             - test
-  nightly-test_build:
-    triggers:
-      - schedule:
-          cron: "5 * * * *"
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - test
