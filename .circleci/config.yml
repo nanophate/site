@@ -21,6 +21,7 @@ jobs:
             if [[ ${COMMIT_MESSAGE} =~ ${CIRCLESKIP} ]]; then
               circleci-agent step halt
             fi
+      - profiling/network
       - ruby/install-deps
       - profiling/network
       - ruby/rspec-test
