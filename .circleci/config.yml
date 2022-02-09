@@ -31,13 +31,7 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - run: ls -la
-      - restore_cache:
-         keys:
-           - gems-v1-{{ checksum "./Gemfile.lock"  }}-{{ .Branch }}
-           - gems-v1-{{ checksum "./Gemfile.lock"  }}
-      - run: ls -la
-      - run: docker build .
+      - run: echo "Hello"
 workflows:
   test_build:
     jobs:
