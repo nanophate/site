@@ -4,6 +4,7 @@ orbs:
   ruby: circleci/ruby@1.1.1
   profiling: nanophate/docker-profiling@0.3.0
   docker: circleci/docker@2.0.0
+  aws-eks: circleci/aws-eks@2.1.0
 jobs:
   test:
     docker:
@@ -13,9 +14,11 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - aws-eks/setup
       - run:
           name: Skip if [circle skip]
           command: |
+            aws help
             MESSAGE=$(git log -1 HEAD --pretty=format:%s)
             CIRCLESKIP="*[circle skip]*"
             if [[ ${COMMIT_MESSAGE} =~ ${CIRCLESKIP} ]]; then
