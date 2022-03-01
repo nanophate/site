@@ -19,7 +19,8 @@ jobs:
       image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - run: echo "Hello"
+      - ruby/install-deps
+      - ruby/rspec-test
 workflows:
   test_build:
     jobs:
