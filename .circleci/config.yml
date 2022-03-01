@@ -14,21 +14,8 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - aws-eks/setup
-      - run:
-          name: Skip if [circle skip]
-          command: |
-            aws help
-            MESSAGE=$(git log -1 HEAD --pretty=format:%s)
-            CIRCLESKIP="*[circle skip]*"
-            if [[ ${COMMIT_MESSAGE} =~ ${CIRCLESKIP} ]]; then
-              circleci-agent step halt
-            fi
-      - profiling/network
       - ruby/install-deps
-      - profiling/network
       - ruby/rspec-test
-      - profiling/network
   build:
     machine:
       image: ubuntu-2004:202010-01
