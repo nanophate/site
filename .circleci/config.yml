@@ -2,9 +2,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.1
-  profiling: nanophate/docker-profiling@0.3.0
   docker: circleci/docker@2.0.0
-  aws-eks: circleci/aws-eks@2.1.0
 jobs:
   test:
     docker:
