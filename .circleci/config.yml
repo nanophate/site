@@ -14,11 +14,17 @@ jobs:
       - checkout
       - ruby/install-deps
       - ruby/rspec-test
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./
   build:
     machine:
       image: ubuntu-2004:202010-01
     steps:
-      - checkout
+      - attach_workspace:
+          at: ./
+      - run: stat *
       - ruby/install-deps
       - ruby/rspec-test
 workflows:
