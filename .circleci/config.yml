@@ -14,19 +14,6 @@ jobs:
       - checkout
       - ruby/install-deps
       - ruby/rspec-test
-      - persist_to_workspace:
-          root: .
-          paths:
-            - ./
-  build:
-    machine:
-      image: ubuntu-2004:202010-01
-    steps:
-      - attach_workspace:
-          at: ./
-      - run: stat *
-      - ruby/install-deps
-      - ruby/rspec-test
 workflows:
   test_build:
     jobs:
@@ -34,3 +21,9 @@ workflows:
       - build:
           requires:
             - test
+      - heroku/deploy-via-git:
+          requires:
+            - test
+          filters:
+            branches:
+              only: main
