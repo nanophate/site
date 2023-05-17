@@ -18,7 +18,7 @@ jobs:
             echo $TESTFILES
             bundle exec rspec $TESTFILES --profile 10 --format RspecJunitFormatter --out /tmp/test-results/rspec/results.xml --format progress
       - store_test_results:
-          path: tmp/test-results/rspec/results.xml
+          path: /tmp/test-results/rspec/results.xml
 
 workflows:
   test_build:
