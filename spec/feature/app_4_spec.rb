@@ -97,6 +97,6 @@ describe 'app_4', type: :feature, js: true do
     expect(page).not_to have_content('Hi, Thank you for touch me!')
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
-    expect(page).not_to have_content('Hi, Thank you for touch me!')
+    expect(page).to have_content('Hi, Thank you for touch me!')
   end
 end
