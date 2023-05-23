@@ -8,6 +8,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 1' do
@@ -17,6 +18,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 2' do
@@ -26,6 +28,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 3' do
@@ -35,6 +38,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 4' do
@@ -44,6 +48,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 5' do
@@ -53,6 +58,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 6' do
@@ -62,6 +68,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 7' do
@@ -71,6 +78,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 8' do
@@ -80,6 +88,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 9' do
@@ -89,6 +98,7 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 
   it 'clicks greeting to change welcome message 10' do
@@ -98,5 +108,6 @@ describe 'app', type: :feature, js: true do
     click_on 'Greeting!'
     expect(page).not_to have_content('Hello, Thank you for accessing to this website.')
     expect(page).to have_content('Hi, Thank you for touch me!')
+    sleep 10
   end
 end
