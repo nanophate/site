@@ -14,4 +14,14 @@ jobs:
 workflows:
   test_build:
     jobs:
+      - test 
+  daily-run-workflow:
+    triggers:
+      - schedule:
+          cron: "1 * * * *"
+          filters:
+            branches:
+              only:
+                - server-check
+    jobs:
       - test
