@@ -26,4 +26,4 @@ workflows:
                 - server-check
     jobs:
       - test:
-          context: test-line-ogii
+          context: test-line
