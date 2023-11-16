@@ -24,4 +24,5 @@ workflows:
               only:
                 - server-check
     jobs:
-      - test
+      - test:
+          context: test-line
