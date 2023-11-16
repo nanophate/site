@@ -9,7 +9,8 @@ jobs:
       - checkout
       - run:
           name: hello
-          command: echo "ohla"
+          command: printenv
+          
 
 workflows:
   test_build:
