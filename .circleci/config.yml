@@ -23,7 +23,7 @@ jobs:
             mkdir -p ~/rspec
             TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=filesize)
             echo $TESTFILES
-            bundle exec rspec $TESTFILES --format RspecJunitFormatter --out ~/rspec/results.xml --format progress
+            bundle exec rspec $TESTFILES --format RspecJunitFormatter --out ~/rspec/rspec.xml --format progress
           name: Run rspec with circleci config
       # - run:
       #     name: RSpec Tests
