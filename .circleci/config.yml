@@ -19,6 +19,7 @@ jobs:
       - ruby/install-deps:
           key: gem-2
       - run: circleci tests glob "spec/**/*_spec.rb"
+      - run: circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=filesize
       - run:
           command: |
             mkdir -p ~/rspec
