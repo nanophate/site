@@ -5,9 +5,8 @@ orbs:
   browser-tools: circleci/browser-tools@1.4.8
 jobs:
   test:
-    runner:
-      machine: true
-      resource_class: nanophate/gcp-resource
+    machine: true
+    resource_class: nanophate/gcp-resource
     steps:
       - checkout
       - ruby/install:
