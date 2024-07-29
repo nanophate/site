@@ -18,6 +18,7 @@ jobs:
           name: Check chrome install
       - ruby/install-deps:
           key: gem-2
+      - run: circleci tests glob "spec/**/*_spec.rb"
       - run:
           command: |
             mkdir -p ~/rspec
