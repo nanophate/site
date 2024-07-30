@@ -5,10 +5,10 @@ orbs:
   browser-tools: circleci/browser-tools@1.4.8
 jobs:
   test:
-    #machine: true
-    #resource_class: nanophate/gcp-resource
-    docker:
-      - image: cimg/ruby:2.7.4-browsers
+    machine: true
+    resource_class: nanophate/gcp-resource
+    #docker:
+    #  - image: cimg/ruby:2.7.4-browsers
     parallelism: 3
     steps:
       - checkout
