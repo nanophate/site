@@ -4,7 +4,7 @@ orbs:
   ruby: circleci/ruby@2.0.1
   browser-tools: circleci/browser-tools@1.4.8
 jobs:
-  test2:
+  test:
     #machine: true
     #resource_class: nanophate/gcp-resource
     docker:
