@@ -29,4 +29,7 @@ jobs:
 workflows:
   test_build:
     jobs:
-      - test
+      - test:
+        filters:
+          tags:
+            only: /v.*/
