@@ -27,9 +27,12 @@ jobs:
           path: ~/rspec/rspec.xml
       - run: echo "hola"
 workflows:
-  test_build:
+  untagged-build:
+    jobs:
+      - test
+  tagged-build:
     jobs:
       - test:
-        filters:
-          tags:
-            only: /v.*/
+          filters:
+            tags:
+              only: /^v.*/
