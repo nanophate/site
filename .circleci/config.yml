@@ -8,6 +8,7 @@ jobs:
     #docker:
     #  - image: cimg/ruby:2.7.4-browsers
     machine: true
+    parallelism: 2
     steps:
       - checkout
       - browser-tools/install-chrome
@@ -34,9 +35,9 @@ workflows:
   untagged-build:
     jobs:
       - test
-  tagged-build:
-    jobs:
-      - test:
-          filters:
-            tags:
-              only: /^v.*/
+  #tagged-build:
+  #  jobs:
+  #    - test:
+  #        filters:
+  #          tags:
+  #            only: /^v.*/
