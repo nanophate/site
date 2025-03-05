@@ -5,8 +5,9 @@ orbs:
   browser-tools: circleci/browser-tools@1
 jobs:
   test:
-    docker:
-      - image: cimg/ruby:2.7.4-browsers
+    #docker:
+    #  - image: cimg/ruby:2.7.4-browsers
+    machine: true
     steps:
       - checkout
       - browser-tools/install-chrome
@@ -16,6 +17,8 @@ jobs:
             google-chrome --version
             chromedriver --version
           name: Check chrome install
+      - ruby/install:
+          version: '2.7.4'
       - ruby/install-deps:
           key: gem-2
       - run:
