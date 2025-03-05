@@ -6,7 +6,7 @@ Capybara.app = eval("Rack::Builder.new {( " + File.read(File.dirname(__dir__) + 
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new app, browser: :chrome,
-    options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+    options: Selenium::WebDriver::Chrome::Options.new(args: %w[--headless=new --disable-gpu --no-sandbox])
 end
 
 Capybara.javascript_driver = :chrome
